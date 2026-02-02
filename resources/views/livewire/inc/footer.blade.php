@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="row " id="unset-width">
-                            {!! $footerContent->content !!}
+                            {!! $footerContent?->content !!}
                             <div class="col-md-6 mt-2">
                                 <div class="fs-4" style="color: #FEA620;">
                                     CONTACT US

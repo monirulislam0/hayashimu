@@ -1,6 +1,6 @@
 <div>
     <div class="container">
-        {!! $data->content !!}
+        {!! $data?->content !!}
         <div class="details-button">
             <div>
                 <a href="{{ route('frontend.about') }}" class="btn view-btn fs-4 details-btn-ctrl">VIEW MORE <i class="fa-solid fa-circle-play" style="color: #2b9cd2; margin-left: 10px;"></i></a>

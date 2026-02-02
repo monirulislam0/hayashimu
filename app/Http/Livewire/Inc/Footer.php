@@ -15,7 +15,7 @@ class Footer extends Component
 
     public function mount(){
         $this->categories = Category::features();
-        $this->footerContent = StaticPage::footerContent();
+        $this->footerContent = StaticPage::footerContent()->first();
 
     }
     public function render()

