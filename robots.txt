@@ -1,0 +1,24 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /config/
+Disallow: /backup/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /.env
+Disallow: /*.html$
+Disallow: /*.phtml
+Disallow: /*.htm
+Disallow: /*.phtml$
+Disallow: /*.shtml
+
+# Uploads: Block folder but allow specific file types
+Disallow: /uploads/
+Allow: /uploads/*.jpg$
+Allow: /uploads/*.png$
+Allow: /uploads/*.gif$
+Allow: /uploads/*.webp$
+Allow: /uploads/*.pdf$ 
+Sitemap:https://hayashimu.com/sitemap.xml
