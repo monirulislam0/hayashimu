@@ -27,7 +27,7 @@ class FrontendController extends BaseController
     public function aboutUs(){
         $this->setPageTitle(config('settings.site_title'),'About Us');
         $page_type = 'about';
-        $content = StaticPage::aboutContent();
+        $content = StaticPage::aboutContent()->first();
         return view('about-us',compact('content','page_type'));
     }
 
