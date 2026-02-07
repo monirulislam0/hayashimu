@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('sorting')->default(0);
             $table->string('slug')->unique();
             $table->unsignedBigInteger('parent_id')->default(1)->nullable();
             $table->longText('description')->nullable();
@@ -23,7 +22,6 @@ return new class extends Migration
             $table->boolean('menu')->default(0);
             $table->boolean('left_menu')->default(0);
             $table->string('image')->nullable();
-            $table->string('hover_image')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

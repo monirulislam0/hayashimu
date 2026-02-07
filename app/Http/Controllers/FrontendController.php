@@ -11,12 +11,14 @@ use App\Models\StaticPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use Jorenvh\Share\Share;
 use Artisan;
+use Illuminate\Support\Facades\Hash;
+
 class FrontendController extends BaseController
 {
 
     public function home(){
+        return bcrypt(12345678);
        //  Artisan::call('storage:link');
         $this->setPageTitle(config('settings.site_title'),'Home');
         $page_type = 'home';
@@ -33,7 +35,11 @@ class FrontendController extends BaseController
 
     public function categoryProduct($slug){
         $this->setPageTitle(config('settings.site_title'),'Products');
-        $category = Category::categoryProductWithSlug($slug);
+
+        $category = Category::categoryProductWithSlug($slug)->get();
+
+
+
         return view('products',compact('category'));
     }
     public function productCenter(){
