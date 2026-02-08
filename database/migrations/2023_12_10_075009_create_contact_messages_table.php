@@ -12,14 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('contact_messages', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('product_id')->nullable();
+          $table->id();
             $table->string('name');
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();
             $table->string('country_name')->nullable();
+            $table->string('company_name')->nullable();
             $table->text('message')->nullable();
-            $table->enum('action',['Pending','Read','Processing','Completed','Declined'])->default('Pending');
+            $table->enum('action', [
+                'Pending',
+                'Read',
+                'Processing',
+                'Completed',
+                'Declined'
+            ])->default('Pending');
             $table->timestamps();
         });
     }

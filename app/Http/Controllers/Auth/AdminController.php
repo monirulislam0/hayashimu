@@ -18,9 +18,12 @@ class AdminController extends Controller
     public function AdminLogin(Request $request)
     {
         $credential = $request->only(['email', 'password']);
+
+        
         if (Auth::guard('admin')->attempt($credential, $request->filled('remember'))) {
             return redirect()->route('admin.dashboard');
         } else {
+
             throw ValidationException::withMessages([
                 'email' => 'Invalid email or password'
             ]);

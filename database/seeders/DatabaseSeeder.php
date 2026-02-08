@@ -18,27 +18,42 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-         \App\Models\User::factory()->create([
-             'name' => 'Test User',
-             'email' => 'user@example.com',
-             'phone' => '01788111408',
-             'password' => Hash::make('password'),
-             'email_verified_at' => now(),
-             'remember_token' => Str::random(10),
-         ]);
+        //  \App\Models\User::factory()->create([
+        //      'name' => 'Test User',
+        //      'email' => 'user@example.com',
+        //      'phone' => '01788111408',
+        //      'password' => Hash::make('password'),
+        //      'email_verified_at' => now(),
+        //      'remember_token' => Str::random(10),
+        //  ]);
 
-        \App\Models\Admin::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'phone' => '01788111408',
-            'password' => Hash::make('password'),
-            'email_verified_at' => now(),
-            'remember_token' => Str::random(10),
+        // \App\Models\Admin::factory()->create([
+        //     'name' => 'Admin',
+        //     'email' => 'admin@example.com',
+        //     'phone' => '01788111408',
+        //     'password' => Hash::make('password'),
+        //     'email_verified_at' => now(),
+        //     'remember_token' => Str::random(10),
+        // ]);
+
+        // Category::factory(15)->create();
+        // Product::factory(50)->create();
+
+        $this->call([
+          UserSeeder::class, 
+          AdminSeeder::class,
+        //   CategorySeeder::class,
+        //   ContactMessageProductMappingSeeder::class,
+        //   ContactMessageSeeder::class, 
+        //   NewsSeeder::class,
+        //   OrderDetailsSeeder::class,
+        //   OrderSeeder::class,
+        //   ProductCategorySeeder::class,
+        //   ProductImageSeeder::class,
+          SettingsTableSeeder::class,
+          ShippingSeeder::class,
+        //   SliderSeeder::class,
+        //   StaticPageSeeder::class,
         ]);
-
-        Category::factory(15)->create();
-        Product::factory(50)->create();
-
-        $this->call(SettingsTableSeeder::class);
     }
 }

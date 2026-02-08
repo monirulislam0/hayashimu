@@ -18,7 +18,7 @@ class FrontendController extends BaseController
 {
 
     public function home(){
-        return bcrypt(12345678);
+        // return bcrypt(12345678);
        //  Artisan::call('storage:link');
         $this->setPageTitle(config('settings.site_title'),'Home');
         $page_type = 'home';

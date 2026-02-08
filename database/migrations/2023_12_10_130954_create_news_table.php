@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->enum('news_type',[1,2,3,4]);
+            $table->enum('news_type', ['1','2','3','4','5']);
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('short')->nullable();
             $table->longText('detail')->nullable();
-            $table->string('published_date')->nullable();
+            $table->string('published_date')->nullable(); // or date()
             $table->string('author')->nullable();
             $table->string('origin')->nullable();
             $table->integer('sorting')->default(1);
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

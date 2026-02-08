@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('static_pages', function (Blueprint $table) {
-            $table->id();
-            $table->string('page_title');
-            $table->string('shortcode');
-            $table->string('image')->nullable();
-            $table->longText('content')->nullable();
-            $table->string('extra')->nullable();
+        Schema::create('contact_message_product_mapping', function (Blueprint $table) {
+             $table->id();
+            $table->integer('product_id');
+            $table->integer('contact_id');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('static_pages');
+        Schema::dropIfExists('contact_messages');
     }
 };

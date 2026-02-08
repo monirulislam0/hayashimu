@@ -19,8 +19,8 @@ class ProductFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->paragraph(),
-            'small_image' => fake()->imageUrl,
-            'detail_image' => fake()->imageUrl,
+            // 'small_image' => fake()->imageUrl,
+            // 'detail_image' => fake()->imageUrl,
             'price' => 500,
             'featured' => 1,
             'new_item' => 1,

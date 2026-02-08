@@ -165,14 +165,14 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\SettingServiceProvider::class,
         \App\Providers\RepositoryServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
-        // Jorenvh\Share\Providers\ShareServiceProvider::class,
-        // Maatwebsite\Excel\ExcelServiceProvider::class,
+        //  Jorenvh\Share\Providers\ShareServiceProvider::class,
+         Maatwebsite\Excel\ExcelServiceProvider::class,
     ])->toArray(),
 
     /*

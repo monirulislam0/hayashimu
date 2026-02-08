@@ -12,17 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id();
+              $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->unsignedBigInteger('parent_id')->default(1)->nullable();
+            $table->foreignId('parent_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->longText('description')->nullable();
-            $table->string('icon')->nullable();
-            $table->boolean('featured')->default(0);
-            $table->boolean('menu')->default(0);
-            $table->boolean('left_menu')->default(0);
+            $table->integer('sorting')->default(0);
+            $table->boolean('featured')->default(false);
+            $table->boolean('menu')->default(false);
             $table->string('image')->nullable();
-            $table->boolean('status')->default(0);
+            $table->string('hover_image')->nullable();
+            $table->boolean('status')->default(false);
+            $table->boolean('is_show_top_sidebar')->default(false);
             $table->timestamps();
         });
     }
